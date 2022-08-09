@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <title>log in</title>
+    <style type="text/css">
+        @media screen and (max-width: 1000px) {
+            body {
+                background-color: #f00;
+            }
+        }
+
+        input {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #06c;
+        }
+
+        .hepsi {
+            margin: 0 auto 0 auto;
+            width: auto;
+            height: auto;
+        }
+
+        .cevaplar {
+            width: 150px;
+            border: 1px solid #06c;
+        }
+
+        .cevaplar td {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #06c;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        function gönder() {
+            var kullanicial = document.getElementById("kullanici").value;
+            document.getElementById("uyari2").innerHTML = "";
+            var sifreal = document.getElementById("sifre").value;
+            document.getElementById("uyari").innerHTML = "";
+
+            if (kullanicial == "mehmetali") {
+                if (sifreal == "92/11/21") {
+                    window.location.href = "https://github.com/gulenc06?tab=repositories";
+                }
+                else {
+
+                    document.getElementById("uyari").innerHTML = "Şifre Hatalı!!!";
+                    document.getElementById("uyari").style.color = "red";
+                    document.getElementById("sifre").style.color = "#fff";
+                    document.getElementById("sifre").style.background = "#f00";
+                    document.getElementById("sifre").style.border = "1px solid #a00";
+                }
+
+            }
+            else {
+                document.getElementById("uyari").innerHTML = "kullanıcı adı ve şifre uyuşmuyor";
+                document.getElementById("uyari").style.color = "red";
+                document.getElementById("sifre").style.color = "#fff";
+                document.getElementById("sifre").style.background = "#f00";
+                document.getElementById("sifre").style.border = "1px solid #a00";
+                document.getElementById("uyari2").innerHTML = "kullanıcı adı ve şifre uyuşmuyor";
+                document.getElementById("uyari2").style.color = "red";
+                document.getElementById("kullanici").style.background = "red";
+            }
+
+
+            if (kullanicieal == "") {
+                document.getElementById("uyari2").innerHTML = "bu alan grerekli!!!";
+                document.getElementById("uyari2").style.color = "red";
+                document.getElementById("kullanici").style.background = "red";
+            }
+
+            if (sifreal == "") {
+                document.getElementById("uyari").innerHTML = "bu alan grerekli!!!";
+                document.getElementById("uyari").style.color = "red";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="hepsi">
+        <form>
+            <table>
+                <tr>
+                    <td width="100" height="30px">kullanıcı adı</td>
+                    <td width="150"><input type="text" id="kullanici" /></td>
+                    <td width="350"><span id="uyari2"></span></td>
+                </tr>
+                <tr>
+                    <td height="30px">şifre</td>
+                    <td><input type="password" id="sifre" onchange="kontrol()" /></td>
+                    <td><span id="uyari"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="gönder" onclick="gönder()"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+</body>
+
+</html>
